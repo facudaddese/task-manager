@@ -1,13 +1,11 @@
-// import Input from "./components/input/Input";
-
+import "./App.css";
 import TaskContainer from "./components/taskContainer/TaskContainer";
 
 function App() {
   return (
-    <>
-      {/* <Input /> */}
+    <main className="grid">
       <TaskContainer />
-    </>
+    </main>
   );
 }
 

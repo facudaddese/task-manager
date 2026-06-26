@@ -1,24 +1,40 @@
-import { useReducer } from "react";
 import { useInput } from "../../hooks/useInput";
 import Button from "../button/Button";
 import Input from "../input/Input";
-import "./TaskContainer.css";
-import { useTasks } from "../../hooks/useTasks";
+import { useTasks } from "../../hooks/useTasksReducer";
+import Task from "../task/Task";
 
 const TaskContainer = () => {
   const { input, handleInput } = useInput();
-  const { initialState, reducer } = useTasks();
-  const { state, dispatch } = useReducer(reducer, initialState);
+  const { state, dispatch } = useTasks();
 
   return (
-    <main className="">
-      <h1 className="pt-5 pb-10 text-3xl">TO DO LIST</h1>
-      <div className="flex gap-4">
+    <>
+      <h1 className="[grid-area:h1] text-center pt-5 pb-10 text-3xl">
+        TO DO LIST
+      </h1>
+      <div className="[gird-area:input] flex flex-wrap justify-center gap-4 py-2">
         <Input input={input} handleInput={handleInput} />
-        <Button label="Add task" handle={() => dispatch({ type: "addTask" })} />
+        <Button
+          label="Add task"
+          handle={() =>
+            dispatch({
+              type: "addTask",
+              payload: {
+                id: crypto.randomUUID(),
+                name: input,
+                completed: false,
+              },
+            })
+          }
+        />
+        <Button
+          label="Clear tasks"
+          handle={() => dispatch({ type: "clearTasks" })}
+        />
       </div>
-      <div>{/* <Task /> */}</div>
-    </main>
+      <Task tasks={state.tasks} dispatch={dispatch} />
+    </>
   );
 };
 

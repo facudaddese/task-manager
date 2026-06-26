@@ -10,7 +10,7 @@ const Input = ({ input, handleInput }: InputProp) => {
       value={input}
       onChange={handleInput}
       placeholder="Insert a task..."
-      className="border-b focus:outline-0"
+      className="border-b focus:outline-0 placeholder:italic font-medium"
     />
   );
 };
