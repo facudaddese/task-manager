@@ -3,13 +3,17 @@ Aplicación web desarrollada con **React**, **TypeScript** y **Tailwind CSS** pa
 
 # Funcionalidades
 
--   Agregar nuevas tareas.
--   Editar tareas existentes.
--   Eliminar tareas.
--   Eliminar todas las tareas.
--   Validación para impedir tareas vacías.
--   Validación para impedir tareas duplicadas.
--   Interfaz responsive.
+- Agregar nuevas tareas.
+- Editar tareas existentes.
+- Eliminar tareas.
+- Eliminar todas las tareas.
+- Marcar tareas como completadas o pendientes.
+- Contador de tareas totales.
+- Contador de tareas completadas.
+- Contador de tareas pendientes.
+- Validación para impedir tareas vacías.
+- Validación para impedir tareas duplicadas.
+- Interfaz responsive.
 
 ----------
 
